@@ -14,7 +14,12 @@ App.Router = Em.Router.extend({
                 route: '/',
                 connectOutlets: function (router) {
                     router.get('applicationController').connectOutlet(
-                        'posts', App.store.find(App.Post)
+                        'tabs', 'tabs'
+                    );
+                    router.get('applicationController').connectOutlet(
+                        'posts', 'posts', App.store.findQuery(
+                            App.Post, {source: 'nytimes'}
+                        )
                     );
                 }
             })

@@ -35,8 +35,6 @@ then visit `localhost:3333`
       assets/
         index.html
         img/
-          glyphicons-halflings-white.png
-          glyphicons-halflings.png
       styles/
       templates/
       models/
@@ -56,7 +54,6 @@ then visit `localhost:3333`
         ember-data-latest.js
         handlebars-1.0.0.beta.6.js
       styles/
-        bootstrap.css
     /public/
       img/
       stylesheets/
@@ -78,4 +75,5 @@ The generated output is placed in the `public/` (by default) directory when `bru
 Software Versions used:
 
 * jQuery 1.8.0
-* Ember latest
+* ember latest
+* ember-data latest
