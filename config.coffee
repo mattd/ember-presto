@@ -1,8 +1,4 @@
-fs   = require 'fs'
-path = require 'path'
-
 # See docs at http://brunch.readthedocs.org/en/latest/config.html.
-
 exports.config =
   files:
     javascripts:
