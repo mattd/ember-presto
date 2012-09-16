@@ -1,6 +1,6 @@
 var App = require('app');
 
-App.Tab = Ember.Object.extend({
+App.Tab = Em.Object.extend({
     name: null,
     slug: null
 });

@@ -1,6 +1,6 @@
 var App = require('app');
 
-App.TabView = Ember.View.extend({
+App.TabView = Em.View.extend({
     contextBinding: 'content',
     tagName: 'li',
     templateName: require('templates/tab'),

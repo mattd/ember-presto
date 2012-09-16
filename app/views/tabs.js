@@ -1,6 +1,6 @@
 var App = require('app');
 
-App.TabsView = Ember.CollectionView.extend({
+App.TabsView = Em.CollectionView.extend({
     classNames: ['tabs'],
     contentBinding: 'controller',
     itemViewClass: App.TabView,

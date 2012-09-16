@@ -1,6 +1,6 @@
 var App = require('app');
 
-App.PostsView = Ember.CollectionView.extend({
+App.PostsView = Em.CollectionView.extend({
     classNames: ['entry-list'],
     contentBinding: 'controller',
     itemViewClass: App.PostView,
