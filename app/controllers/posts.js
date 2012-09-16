@@ -8,5 +8,5 @@ App.PostsController = Em.ArrayController.extend({
             'content',
             App.store.findQuery(App.Post, {source: this.selected})
         );
-    }.observes('selected'),
+    }.observes('selected')
 });
