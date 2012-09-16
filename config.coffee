@@ -10,6 +10,7 @@ exports.config =
       joinTo:
         'javascripts/app.js': /^app/
         'javascripts/vendor.js': /^vendor/
+        'test/test.js': /^test/
       order:
         before: [
           'vendor/scripts/console-helper.js',
@@ -22,6 +23,22 @@ exports.config =
     stylesheets:
       defaultExtension: 'styl'
       joinTo: 'stylesheets/app.css'
+      order:
+        before: [
+          'vendor/styles/transitions.css',
+          'vendor/stylesjquery.mobile.transition.css',
+          'vendor/styles/jquery.mobile.transition.fade.css',
+          'vendor/styles/jquery.mobile.transition.flip.css',
+          'vendor/styles/jquery.mobile.transition.flow.css',
+          'vendor/styles/jquery.mobile.transition.pop.css',
+          'vendor/styles/jquery.mobile.transition.slide.css',
+          'vendor/styles/jquery.mobile.transition.slidedown.css',
+          'vendor/styles/jquery.mobile.transition.slidefade.css',
+          'vendor/styles/jquery.mobile.transition.slidein.keyframes.css',
+          'vendor/styles/jquery.mobile.transition.slideout.keyframes.css',
+          'vendor/styles/jquery.mobile.transition.slideup.css',
+          'vendor/styles/jquery.mobile.transition.turn.css'
+        ]
 
     templates:
       precompile: true
@@ -30,6 +47,17 @@ exports.config =
 
   conventions:
     assets: /static(\/|\\)/
+
+  jshint:
+    pattern: /^app\/.*\.js$/
+    options:
+      bitwise: true
+      curly: true
+    globals:
+      jQuery: true
+      App: true
+      Ember: false
+      Em: false
 
   server:
     port: 3333

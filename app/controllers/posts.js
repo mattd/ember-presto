@@ -8,5 +8,10 @@ App.PostsController = Ember.ArrayController.extend({
             'content',
             App.store.findQuery(App.Post, {source: this.selected})
         );
-    }.observes('selected')
+    }.observes('selected'),
+
+    contentArrayDidChange: function () {
+        console.log('changed');
+        return this;
+    }
 });

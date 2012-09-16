@@ -15,16 +15,17 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
-    "javascript-brunch": ">= 1.0 < 1.5",
-    "css-brunch": ">= 1.0 < 1.5",
-    "stylus-brunch": ">= 1.0 < 1.5",
-    "uglify-js-brunch": ">= 1.0 < 1.5",
-    "clean-css-brunch": ">= 1.0 < 1.5",
+    "javascript-brunch": ">= 1.0",
+    "css-brunch": ">= 1.0",
+    "stylus-brunch": ">= 1.0",
+    "uglify-js-brunch": ">= 1.0",
+    "clean-css-brunch": ">= 1.0",
     "ember-handlebars-brunch": "git://github.com/mattd/ember-handlebars-brunch.git"
   },
   "devDependencies": {
     "mocha": "0.14.0",
-    "expect.js": "0.1.2",
-    "express": "2.5.8"
+    "chai": "1.2.0",
+    "jshint": ">= 0.9.0",
+    "jshint-brunch": ">= 1.0"
   }
 }

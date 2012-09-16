@@ -4,6 +4,6 @@ App.TabsView = Ember.CollectionView.extend({
     classNames: ['tabs'],
     contentBinding: 'controller',
     itemViewClass: App.TabView,
-    tagName: 'ul',
-    selectedBinding: 'controller.selected'
+    selectedBinding: 'controller.selected',
+    tagName: 'ul'
 });
