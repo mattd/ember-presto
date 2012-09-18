@@ -1,8 +1,6 @@
 var App = require('app');
 
-App.PostsView = Ember.CollectionView.extend({
-    classNames: ['entry-list'],
-    contentBinding: 'controller',
-    itemViewClass: App.PostView,
-    tagName: 'ul'
-});
+App.PostsView = Ember.CollectionView.extend(
+    App.SlidingCollectionView,
+    {itemViewClass: App.PostView}
+);

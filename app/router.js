@@ -14,15 +14,21 @@ App.Router = Em.Router.extend({
                 route: '/',
                 connectOutlets: function (router) {
                     router.get('applicationController').connectOutlet(
-                        'tabs', 'tabs'
+                        'sources', 'sources'
                     );
+                }
+            }),
+            source: Em.Route.extend({
+                route: '/:source_id',
+                connectOutlets: function (router, source) {
                     router.get('applicationController').connectOutlet(
                         'posts', 'posts', App.store.findQuery(
-                            App.Post, {source: 'nytimes'}
+                            App.Post, {source: source.get('id')}
                         )
                     );
                 }
-            })
+            }),
+            showSource: Em.Route.transitionTo('source')
         })
     })
 });

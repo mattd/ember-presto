@@ -2,4 +2,4 @@
 
 require('controllers/application');
 require('controllers/posts');
-require('controllers/tabs');
+require('controllers/sources');
