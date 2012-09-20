@@ -1,5 +1,6 @@
 var App = require('app');
 
 App.MainView = Em.ContainerView.extend({
-    childViews: []
+    childViews: [],
+    currentViewBinding: 'App.router.mainController.firstObject'
 });
