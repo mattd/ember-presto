@@ -6,10 +6,8 @@ App.Router = Em.Router.extend({
     root: Em.Route.extend({
         index: Em.Route.extend({
             route: '/',
-            connectOutlets: function (router) {
-                router.get('applicationController').connectOutlet(
-                    'main'
-                );
+            enter: function (router) {
+                router.set('mainController', App.MainController.create())
             }
         })/*,
         main: Em.Route.extend({
