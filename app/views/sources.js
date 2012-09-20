@@ -2,5 +2,8 @@ var App = require('app');
 
 App.SourcesView = Ember.CollectionView.extend(
     App.SlidingCollectionView,
-    {itemViewClass: App.SourceView}
+    {
+        contentBinding: 'App.router.sourcesController',
+        itemViewClass: App.SourceView
+    }
 );

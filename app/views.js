@@ -5,3 +5,4 @@ require('views/post');
 require('views/posts');
 require('views/source');
 require('views/sources');
+require('views/main');
