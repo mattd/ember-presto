@@ -4,33 +4,43 @@ App.Router = Em.Router.extend({
     enableLogging: true,
 
     root: Em.Route.extend({
+        enter: function (router) {
+            console.log('in root');
+            router.set('mainController', App.MainController.create());
+        },
         index: Em.Route.extend({
             route: '/',
-            enter: function (router) {
-                router.set('mainController', App.MainController.create())
-            }
-        })/*,
-        main: Em.Route.extend({
-            route: '/main',
+            redirectsTo: 'posts.index'
+        }),
+        posts: Em.Route.extend({
+            route: '/posts',
             index: Em.Route.extend({
                 route: '/',
-                connectOutlets: function (router) {
-                    router.get('applicationController').connectOutlet(
-                        'main'
+                enter: function (router) {
+                    router.get('mainController').pushObject(
+                        App.SourcesView.create()
                     );
                 }
             }),
             source: Em.Route.extend({
                 route: '/:source_id',
                 connectOutlets: function (router, source) {
-                    router.get('applicationController').connectOutlet(
-                        'posts', App.store.findQuery(
-                            App.Post, {source: source.get('id')}
-                        )
+                    router.set(
+                        'postsController',
+                        App.PostsController.create({
+                            content: App.store.findQuery(
+                                App.Post, {source: source.get('id')}
+                            )
+                        })
+                    );
+                    router.get('mainController').pushObject(
+                        App.PostsView.create({
+                            controller: router.get('postsController')
+                        })
                     );
                 }
             }),
             showSource: Em.Route.transitionTo('source')
-        })*/
+        })
     })
 });
