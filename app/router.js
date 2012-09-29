@@ -5,7 +5,6 @@ App.Router = Em.Router.extend({
 
     root: Em.Route.extend({
         enter: function (router) {
-            console.log('in root');
             router.set('mainController', App.MainController.create());
         },
         index: Em.Route.extend({
