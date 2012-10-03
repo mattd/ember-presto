@@ -1,21 +1,18 @@
 var App = require('app');
 
 App.MainController = Em.ArrayController.extend({
-    content: []/*,
+    content: [],
     history: [],
     pushState: function (view) {
         var currentPath = App.router.get('currentPath'),
             history = this.get('history'),
             previousPath = history.objectAt(history.length - 2);
 
-        console.log(previousPath);
-
         if (previousPath === currentPath) {
-            this.get('history').popObject();
-            this.popObject();
+            history.popObject();
         } else {
-            this.get('history').pushObject(currentPath);
-            this.pushObject(view);
+            history.pushObject(currentPath);
         }
-    }*/
+        this.pushObject(view);
+    }
 });
