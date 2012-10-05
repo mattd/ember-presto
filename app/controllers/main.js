@@ -2,17 +2,15 @@ var App = require('app');
 
 App.MainController = Em.ArrayController.extend({
     content: [],
-    history: [],
-    pushState: function (view) {
-        var currentPath = App.router.get('currentPath'),
-            history = this.get('history'),
-            previousPath = history.objectAt(history.length - 2);
+    pushView: function (view, options) {
+        var options = options || {},
+            url = App.router.location.getURL();
 
-        if (previousPath === currentPath) {
-            history.popObject();
-        } else {
-            history.pushObject(currentPath);
-        }
-        this.pushObject(view);
+        view.setProperties({
+            transition: options.transition || 'slide',
+            direction: options.direction || 'in',
+            reverse: options.reverse || false
+        });
+        this.pushObject({view: view, url: url});
     }
 });

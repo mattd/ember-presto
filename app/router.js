@@ -15,8 +15,8 @@ App.Router = Em.Router.extend({
             route: '/posts',
             index: Em.Route.extend({
                 route: '/',
-                enter: function (router) {
-                    router.get('mainController').pushState(
+                connectOutlets: function (router) {
+                    router.get('mainController').pushView(
                         App.SourcesView.create()
                     );
                 }
@@ -32,7 +32,7 @@ App.Router = Em.Router.extend({
                             )
                         })
                     );
-                    router.get('mainController').pushState(
+                    router.get('mainController').pushView(
                         App.PostsView.create({
                             controller: router.get('postsController')
                         })

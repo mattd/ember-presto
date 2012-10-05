@@ -49,6 +49,7 @@ exports.config =
     options:
       bitwise: true
       curly: true
+      shadow: true
     globals:
       jQuery: true
       App: true

@@ -2,7 +2,7 @@ var App = require('app');
 
 App.MainView = Em.ContainerView.extend({
     childViews: [],
-    currentViewBinding: 'App.router.mainController.lastObject',
+    currentViewBinding: 'App.router.mainController.lastObject.view',
     previousView: null,
 
     _currentViewWillChange: Ember.beforeObserver(function() {

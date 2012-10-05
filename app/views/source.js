@@ -6,6 +6,6 @@ App.SourceView = Ember.View.extend({
     templateName: require('templates/source'),
 
     click: function (e) {
-        this.get('parentView').set('transitionState', 'out');
+        this.get('parentView').set('direction', 'out');
     }
 });

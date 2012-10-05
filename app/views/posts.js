@@ -1,6 +1,6 @@
 var App = require('app');
 
 App.PostsView = Ember.CollectionView.extend(
-    App.SlidingCollectionView,
+    App.AnimatedCollectionView,
     {itemViewClass: App.PostView}
 );
